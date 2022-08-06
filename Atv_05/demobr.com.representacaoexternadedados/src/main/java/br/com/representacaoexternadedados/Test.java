@@ -17,7 +17,6 @@ public class Test implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        departamentoService.save();
         funcionarioService.save();
     }
 }

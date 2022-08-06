@@ -5,6 +5,13 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "funcionario")
+@NamedQuery(name = "Funcionario.byQtdeDependentes",
+query = "from Funcionario f where f.qtdeDependentes = ?1")
+
+@NamedNativeQuery(name = "Funcionario.containsName",
+query = "select * from funcionario where nome like CONCAT('%', ?1, '%')",
+resultClass = Funcionario.class)
+
 public class Funcionario implements Serializable {
 
     @Id
@@ -38,5 +45,17 @@ public class Funcionario implements Serializable {
         this.salario = salario;
         this.cargo = cargo;
         this.departamento = departamento;
+    }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", qtdeDependentes=" + qtdeDependentes +
+                ", salario=" + salario +
+                ", cargo='" + cargo + '\'' +
+                ", departamento=" + departamento.toString() +
+                '}';
     }
 }

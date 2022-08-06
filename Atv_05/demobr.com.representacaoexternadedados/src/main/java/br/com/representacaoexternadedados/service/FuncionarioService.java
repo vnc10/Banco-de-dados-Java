@@ -20,7 +20,7 @@ public class FuncionarioService {
 
     public void save(){
         Optional<Departamento> departamento = departamentoService.findByName("Frete");
-        Funcionario funcionario = new Funcionario("Vini", 3, 3500, "Dev Jr", departamento.get().getId());
+        Funcionario funcionario = new Funcionario("Vini2", 3, 3500, "Dev Jr", departamento.get());
         funcionarioRepository.save(funcionario);
     }
 

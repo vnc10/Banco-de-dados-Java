@@ -26,4 +26,12 @@ public class Departamento implements Serializable {
     public Long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Departamento{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
 }
