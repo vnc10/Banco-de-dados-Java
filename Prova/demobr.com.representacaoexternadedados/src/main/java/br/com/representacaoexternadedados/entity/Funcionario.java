@@ -34,4 +34,15 @@ public class Funcionario implements Serializable {
         this.telefone = telefone;
         this.cargo = cargo;
     }
+
+    @Override
+    public String toString() {
+        return "Funcionario{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", cargo=" + cargo.toString() +
+                '}';
+    }
 }

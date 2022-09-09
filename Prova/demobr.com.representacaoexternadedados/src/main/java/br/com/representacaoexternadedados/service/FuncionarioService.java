@@ -7,6 +7,7 @@ import br.com.representacaoexternadedados.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -26,6 +27,24 @@ public class FuncionarioService {
 
     public void deleteById(Long id){
         funcionarioRepository.deleteById(id);
+    }
+
+    public void findAll(){
+        List<Funcionario> list = funcionarioRepository.findAll();
+        for (Funcionario funcionario : list) {
+            System.out.println(funcionario.toString());
+        }
+    }
+
+    public void findAllByDesc(){
+        List<String> list = funcionarioRepository.findAllByNome();
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
+
+    public void count(){
+        System.out.println(funcionarioRepository.findAll().size());
     }
 
 }

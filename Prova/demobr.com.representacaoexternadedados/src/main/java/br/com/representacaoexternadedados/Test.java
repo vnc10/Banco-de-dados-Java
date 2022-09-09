@@ -18,9 +18,9 @@ public class Test implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-//        cargoService.save("Gerente");
-//        funcionarioService.save("Gerente", "Vinicius", "Masculino", "4444-4444");
-        funcionarioService.deleteById(3L);
-        cargoService.deleteById(6L);
+        funcionarioService.findAll();
+        cargoService.findAll();
+        funcionarioService.findAllByDesc();
+        funcionarioService.count();
     }
 }

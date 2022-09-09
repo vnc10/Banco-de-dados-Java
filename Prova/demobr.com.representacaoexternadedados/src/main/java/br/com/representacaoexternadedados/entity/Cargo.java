@@ -16,7 +16,7 @@ public class Cargo implements Serializable {
     @Column(name = "cargo")
     private String cargo;
 
-    @OneToMany(mappedBy = "cargo")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "cargo")
     private List<Funcionario> funcionarioList;
 
     public Cargo() {
@@ -24,5 +24,21 @@ public class Cargo implements Serializable {
 
     public Cargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public List<Funcionario> getFuncionarioList() {
+        return funcionarioList;
+    }
+
+    @Override
+    public String toString() {
+        return "Cargo{" +
+                "id=" + id +
+                ", cargo='" + cargo + '\'' +
+                '}';
     }
 }
