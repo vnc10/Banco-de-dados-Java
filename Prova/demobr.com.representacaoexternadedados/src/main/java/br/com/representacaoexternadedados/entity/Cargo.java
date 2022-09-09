@@ -16,7 +16,13 @@ public class Cargo implements Serializable {
     @Column(name = "cargo")
     private String cargo;
 
-    @OneToMany(mappedBy = "funcionario")
+    @OneToMany(mappedBy = "cargo")
     private List<Funcionario> funcionarioList;
 
+    public Cargo() {
+    }
+
+    public Cargo(String cargo) {
+        this.cargo = cargo;
+    }
 }

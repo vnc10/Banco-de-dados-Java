@@ -28,4 +28,10 @@ public class Funcionario implements Serializable {
 
     public Funcionario() {
     }
+    public Funcionario(String nome, String sexo, String telefone, Cargo cargo) {
+        this.nome = nome;
+        this.sexo = sexo;
+        this.telefone = telefone;
+        this.cargo = cargo;
+    }
 }
